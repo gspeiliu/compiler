@@ -1,0 +1,93 @@
+1 : /* A program to perform Euclid's
+2 :    Algorithm to compute gcd.
+3 :  */
+	 4 : reserved data type: int
+	 4 : identifier gcd
+	 4 : left parent : (
+	 4 : reserved data type: int
+	 4 : identifier u
+	 4 : comma operator : ,
+	 4 : reserved data type: int
+	 4 : identifier v
+	 4 : right parent : )
+4 : int gcd (int u, int v)
+	 5 : left curly parent : {
+5 : {
+	 6 : reserved word: if
+	 6 : left parent : (
+	 6 : identifier v
+	 6 : binary compare operator EQ: ==
+	 6 : number 0
+	 6 : right parent : )
+	 6 : reserved word: return
+	 6 : identifier u
+	 6 : delimiter: ;
+6 :   if (v == 0) return u;
+	 7 : reserved word: else
+	 7 : reserved word: return
+	 7 : identifier gcd
+	 7 : left parent : (
+	 7 : identifier v
+	 7 : comma operator : ,
+	 7 : identifier u
+	 7 : binary operator subtract: -
+	 7 : identifier u
+	 7 : binary operator quote: /
+	 7 : identifier v
+	 7 : binary operator multiply: *
+	 7 : identifier v
+	 7 : right parent : )
+	 7 : delimiter: ;
+7 :   else return gcd(v, u-u/v*v);
+8 :   /* u-u/v*v == u mod v */
+	 9 : right curly parent : }
+9 : }
+10 : 
+	 11 : reserved data type: int
+	 11 : identifier main
+	 11 : left parent : (
+	 11 : reserved word: void
+	 11 : right parent : )
+11 : int main(void)
+	 12 : left curly parent : {
+12 : {
+	 13 : reserved data type: int
+	 13 : identifier x
+	 13 : delimiter: ;
+	 13 : reserved data type: int
+	 13 : identifier y
+	 13 : delimiter: ;
+13 :   int x;  int y;
+	 14 : identifier x
+	 14 : assign operator : =
+	 14 : identifier input
+	 14 : left parent : (
+	 14 : right parent : )
+	 14 : delimiter: ;
+14 :   x = input();
+	 15 : identifier y
+	 15 : assign operator : =
+	 15 : identifier input
+	 15 : left parent : (
+	 15 : right parent : )
+	 15 : delimiter: ;
+15 :   y = input();
+16 : 
+	 17 : identifier output
+	 17 : left parent : (
+	 17 : identifier gcd
+	 17 : left parent : (
+	 17 : identifier x
+	 17 : comma operator : ,
+	 17 : identifier y
+	 17 : right parent : )
+	 17 : right parent : )
+	 17 : delimiter: ;
+17 :   output(gcd(x, y));
+18 : 
+	 19 : reserved word: return
+	 19 : number 0
+	 19 : delimiter: ;
+19 :   return 0;
+	 20 : right curly parent : }
+20 : }
